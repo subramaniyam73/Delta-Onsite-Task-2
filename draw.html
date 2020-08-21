@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Paint-Delta Onsite</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Roboto&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="tools">
+      <form id="commit" action="#" method="post">
+        <label for="imgURL">Enter image URL</label>
+        <input type="text" placeholder="Enter image URL" name="imgURL" id="imgURL">
+        <label for="imgFile">Upload Image from System</label>
+        <input type="file" accept="image/*" name="imgFile" id="imgFile" >
+        <label for="thickness">Thickness</label>
+        <input type="number" id="thickness" name="thickness" min="1" max="200" value="2">
+        <label for="color">Brush Color</label>
+        <input type="color" name="color" id="color">
+        <button type="submit" name="button">Make Changes</button>
+        <button type="button" name="eraser" id="eraser">Erase</button>
+        <span id="heading">Delta Meme Creator  <img src="deltaLogoGreen.png" height="30px" Width="30px"></img></span>
+        <span id="eraserStat">Painting !</span>
+        <span id="shapingStat">Free Drawing !</span>
+      </form>
+      <form id="textForm">
+        <input type="number" placeholder="Font Size" value="10" name="textSize" id="textSize">
+        <input type="text" placeholder="Text to place on Meme" name="memeText" id="memeText">
+        <button type="submit">Add Text</button>
+      </form>
+      <div id="shapes">
+        <button type="button" name="selectRect" id="selectRect" value="rectangle">Rectangle</button>
+        <button type="button" name="selectCircle" id="selectCircle" value="circle">Circle</button>
+
+      </div>
+      <div id="rectDetails">
+        <form id="rectForm" action="#" method="post">
+          <input type="number" name="l" placeholder="Length" required min="1" max="500">
+          <input type="number" name="w" placeholder="Width" required min="1" max="500">
+          <button type="submit" name="generate">Generate Shape</button>
+        </form>
+      </div>
+
+      <div id="circleDetails">
+        <form id="circleForm" action="#" method="post">
+          <input type="number" name="radius" placeholder="Radius" required min="1" max="500">
+          <button type="submit" name="generate">Generate Shape</button>
+        </form>
+      </div>
+
+    </div>
+   <div id="canvasWrapper">
+    <canvas id="canvas"></canvas>
+    <button id="download">Download</button>
+   </div>
+
+    <script type="text/javascript" src="draw.js">
+
+    </script>
+  </body>
+</html>
